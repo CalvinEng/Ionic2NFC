@@ -1,7 +1,7 @@
 function Nfc() {}
 
 Nfc.prototype.coolMethod = function (arg0, successCallback, errorCallback) {
-    cordova.exec(successCallback, errorCallback, "Nfc", "coolMethod", [arg0]);
+    cordova.exec(successCallback, errorCallback, "Ionic2NFC", "coolMethod", [arg0]);
 };
 
 Nfc.install = function () {
