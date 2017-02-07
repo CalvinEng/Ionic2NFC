@@ -9,7 +9,11 @@ import com.nxp.nfclib.ultralight.Ultralight;
 import com.nxp.nfclib.ultralight.UltralightFactory;
 
 import android.content.Intent;
-import android.os.Bundle;
+import android.nfc.FormatException;
+import android.nfc.NdefMessage;
+import android.nfc.NdefRecord;
+import android.nfc.NfcAdapter;
+import android.nfc.Tag;
 
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CallbackContext;

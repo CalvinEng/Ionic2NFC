@@ -10,8 +10,18 @@
                 <param name="android-package" value="com.dnrps.ionic2nfc.Ionic2NFC" />
             </feature>
         </config-file>
-        <config-file parent="/*" target="AndroidManifest.xml"></config-file>
+
+        <config-file parent="/*" target="AndroidManifest.xml">
+            <uses-permission android:name="android.permission.NFC" />
+            <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+            <uses-permission android:name="android.permission.INTERNET" />
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+            <uses-feature android:name="android.hardware.nfc" android:required="true" />
+        </config-file>
+
         <source-file src="libs/nxpnfcandroidlib/1.0/jars/classes.jar" target-dir="libs" framework="true" />
+
         <source-file src="src/android/Ionic2NFC.java" target-dir="src/com-dnrps-ionic2nfc/Ionic2NFC" />
     </platform>
 </plugin>
