@@ -9,7 +9,6 @@ import com.nxp.nfclib.ultralight.Ultralight;
 import com.nxp.nfclib.ultralight.UltralightFactory;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
 import org.apache.cordova.CordovaPlugin;
@@ -25,7 +24,7 @@ import java.util.Arrays;
 /**
  * This class echoes a string called from JavaScript.
  */
-public class Ionic2NFC extends CordovaPlugin, AppCompatActivity {
+public class Ionic2NFC extends CordovaPlugin {
     public static final String TAG = Ionic2NFC.class.getSimpleName();
 
     private static String m_StrPackageKey = "417926a7a8219dd849faed9a46a133f5";
@@ -85,8 +84,7 @@ public class Ionic2NFC extends CordovaPlugin, AppCompatActivity {
 
                     INdefMessage message = m_objUltraLight.readNDEF();
 
-                    Toast toast = Toast.makeText(getApplicationContext(), readINDefMessage(message), Toast.LENGTH_SHORT);
-                    toast.show();
+                    System.out.println(readINDefMessage(message));
 
                     m_objUltraLight.getReader().close();
                 }
@@ -105,8 +103,7 @@ public class Ionic2NFC extends CordovaPlugin, AppCompatActivity {
 
                     INdefMessage message = m_objNTag216.readNDEF();
 
-                    Toast toast = Toast.makeText(getApplicationContext(), readINDefMessage(message), Toast.LENGTH_SHORT);
-                    toast.show();
+                    System.out.println(readINDefMessage(message));
 
                     m_objNTag216.getReader().close();
                 }
@@ -117,8 +114,7 @@ public class Ionic2NFC extends CordovaPlugin, AppCompatActivity {
 
                 break;
             default:
-                Toast toast = Toast.makeText(getApplicationContext(), "Unknown", Toast.LENGTH_SHORT);
-                toast.show();
+                System.out.println("Unknown");
                 break;
         }
     }
