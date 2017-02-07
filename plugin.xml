@@ -11,7 +11,7 @@
             </feature>
         </config-file>
         <config-file parent="/*" target="AndroidManifest.xml"></config-file>
-        <source-file src="libs/android/nxpnfcliblite.jar" target-dir="libs" framework="true" />
+        <source-file src="libs/nxpnfcandroidlib/1.0/jars/classes.jar" target-dir="libs" framework="true" />
         <source-file src="src/android/Ionic2NFC.java" target-dir="src/com-dnrps-ionic2nfc/Ionic2NFC" />
     </platform>
 </plugin>
