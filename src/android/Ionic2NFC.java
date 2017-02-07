@@ -22,7 +22,7 @@ import org.json.JSONObject;
  * This class echoes a string called from JavaScript.
  */
 public class Ionic2NFC extends CordovaPlugin {
-    public static final String TAG = MainActivity.class.getSimpleName();
+    public static final String TAG = Ionic2NFC.class.getSimpleName();
 
     private static String m_StrPackageKey = "417926a7a8219dd849faed9a46a133f5";
 
@@ -56,7 +56,7 @@ public class Ionic2NFC extends CordovaPlugin {
         }
     }
     
-    private void intializeLibrary() {
+    private void intializeLibrary(CallbackContext callbackContext) {
         m_libInstance = NxpNfcLib.getInstance();
         m_libInstance.registerActivity(this, m_StrPackageKey);
         
