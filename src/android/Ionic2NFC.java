@@ -14,6 +14,7 @@ public class Ionic2NFC extends CordovaPlugin {
 
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
+        System.out.println("Start.");
         if (action.equals("coolMethod")) {
             String message = args.getString(0);
             this.coolMethod(message, callbackContext);
@@ -23,10 +24,13 @@ public class Ionic2NFC extends CordovaPlugin {
     }
 
     private void coolMethod(String message, CallbackContext callbackContext) {
+        "Expected one non-empty string argument."
         if (message != null && message.length() > 0) {
             callbackContext.success(message);
+            System.out.println(message);
         } else {
             callbackContext.error("Expected one non-empty string argument.");
+            System.out.println("Expected one non-empty string argument.");
         }
     }
 }
