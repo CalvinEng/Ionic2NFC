@@ -71,7 +71,7 @@ public class Ionic2NFC extends CordovaPlugin {
     }
 
     @Override
-    public void onNewIntent(final Intent intent)
+    public void onNewIntent(Intent intent)
     {
         super.onNewIntent(intent);
 
@@ -126,14 +126,14 @@ public class Ionic2NFC extends CordovaPlugin {
     @Override
     public void onPause(boolean multitasking) {
         super.onPause(multitasking);
-        libInstance.stopForeGroundDispatch();
+        m_libInstance.stopForeGroundDispatch();
         System.out.println("onPause");
     }
 
     @Override
     public void onResume(boolean multitasking) {
         super.onResume(multitasking);
-        libInstance.startForeGroundDispatch();
+        m_libInstance.startForeGroundDispatch();
         System.out.println("onResume");
     }
     
