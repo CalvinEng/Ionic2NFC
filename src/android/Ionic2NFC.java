@@ -8,6 +8,7 @@ import com.nxp.nfclib.ntag.NTagFactory;
 import com.nxp.nfclib.ultralight.Ultralight;
 import com.nxp.nfclib.ultralight.UltralightFactory;
 
+import android.content.Intent;
 import android.widget.Toast;
 
 import org.apache.cordova.CordovaPlugin;
@@ -68,8 +69,6 @@ public class Ionic2NFC extends CordovaPlugin {
         super.onNewIntent(intent);
 
         m_cardType = m_libInstance.getCardType(intent);
-
-        Log.d(TAG, m_cardType.toString());
 
         switch(m_cardType)
         {
