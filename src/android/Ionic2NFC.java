@@ -9,6 +9,7 @@ import com.nxp.nfclib.ultralight.Ultralight;
 import com.nxp.nfclib.ultralight.UltralightFactory;
 
 import android.content.Intent;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
 import org.apache.cordova.CordovaPlugin;
@@ -18,10 +19,13 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.UnsupportedEncodingException;
+import java.util.Arrays;
+
 /**
  * This class echoes a string called from JavaScript.
  */
-public class Ionic2NFC extends CordovaPlugin {
+public class Ionic2NFC extends CordovaPlugin, AppCompatActivity {
     public static final String TAG = Ionic2NFC.class.getSimpleName();
 
     private static String m_StrPackageKey = "417926a7a8219dd849faed9a46a133f5";
@@ -130,5 +134,19 @@ public class Ionic2NFC extends CordovaPlugin {
     protected void onPause() {
         super.onPause();
         m_libInstance.stopForeGroundDispatch();
+    }
+    
+    private String readINDefMessage(INdefMessage message)
+    {
+        byte[] messageByte = message.toByteArray();
+
+        messageByte = Arrays.copyOfRange(messageByte, 7, messageByte.length-1);
+
+        try {
+            return new String(messageByte, "UTF-8");
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 }
