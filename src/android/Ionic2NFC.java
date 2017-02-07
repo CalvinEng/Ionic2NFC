@@ -24,7 +24,7 @@ public class Ionic2NFC extends CordovaPlugin {
     }
 
     private void coolMethod(String message, CallbackContext callbackContext) {
-        "Expected one non-empty string argument."
+        System.out.println("coolMethod.");
         if (message != null && message.length() > 0) {
             callbackContext.success(message);
             System.out.println(message);
