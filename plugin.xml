@@ -7,7 +7,7 @@
     <platform name="android">
         <config-file parent="/*" target="res/xml/config.xml">
             <feature name="Ionic2NFC">
-                <param name="android-package" value="com-dnrps-ionic2nfc.Ionic2NFC" />
+                <param name="android-package" value="com.dnrps.ionic2nfc.Ionic2NFC" />
             </feature>
         </config-file>
         <config-file parent="/*" target="AndroidManifest.xml"></config-file>
