@@ -9,7 +9,7 @@ import com.nxp.nfclib.ultralight.Ultralight;
 import com.nxp.nfclib.ultralight.UltralightFactory;
 
 import android.content.Intent;
-import android.widget.Toast;
+import android.os.Bundle;
 
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CallbackContext;
@@ -61,7 +61,7 @@ public class Ionic2NFC extends CordovaPlugin {
     
     private void intializeLibrary(CallbackContext callbackContext) {
         m_libInstance = NxpNfcLib.getInstance();
-        m_libInstance.registerActivity(this, m_StrPackageKey);
+        m_libInstance.registerActivity(cordova.getActivity(), m_StrPackageKey);
         
         callbackContext.success();
     }
