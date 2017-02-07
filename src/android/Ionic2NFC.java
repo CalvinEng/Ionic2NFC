@@ -124,16 +124,17 @@ public class Ionic2NFC extends CordovaPlugin {
     }
 
     @Override
-    protected void onResume() {
-        super.onResume();
-        m_libInstance.startForeGroundDispatch();
-
+    public void onPause(boolean multitasking) {
+        super.onPause(multitasking);
+        libInstance.stopForeGroundDispatch();
+        System.out.println("onPause");
     }
 
     @Override
-    protected void onPause() {
-        super.onPause();
-        m_libInstance.stopForeGroundDispatch();
+    public void onResume(boolean multitasking) {
+        super.onResume(multitasking);
+        libInstance.startForeGroundDispatch();
+        System.out.println("onResume");
     }
     
     private String readINDefMessage(INdefMessage message)
