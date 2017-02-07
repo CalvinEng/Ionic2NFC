@@ -1,5 +1,13 @@
 package com.dnrps.ionic2nfc;
 
+import com.nxp.nfclib.CardType;
+import com.nxp.nfclib.NxpNfcLib;
+import com.nxp.nfclib.ndef.INdefMessage;
+import com.nxp.nfclib.ntag.INTag213215216;
+import com.nxp.nfclib.ntag.NTagFactory;
+import com.nxp.nfclib.ultralight.Ultralight;
+import com.nxp.nfclib.ultralight.UltralightFactory;
+
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CallbackContext;
 
