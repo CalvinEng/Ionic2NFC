@@ -20,7 +20,10 @@
             <uses-feature android:name="android.hardware.nfc" android:required="true" />
         </config-file>
 
+        <source-file src="libs/nxpnfcandroidlib/1.0/jars/classes.jar" target-dir="libs" framework="true" />
+
         <source-file src="libs/nxpnfcandroidlib/1.0/nxpnfcandroidlib-1.0.aar" target-dir="libs" framework="true" />
+
 
         <source-file src="src/android/Ionic2NFC.java" target-dir="src/com-dnrps-ionic2nfc/Ionic2NFC" />
     </platform>
